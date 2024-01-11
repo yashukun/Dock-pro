@@ -1,4 +1,4 @@
-FROM mysql:8.0.33
+FROM mysql:latest
 # WORKDIR /db
 # # here db_grp is group and using -g to add db_usr to db_grp
 # RUN groupadd -r db_grp && useradd -g db_usr db_grp
