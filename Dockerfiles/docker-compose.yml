@@ -15,8 +15,6 @@ services:
     ports:
       - "8080:8080"
   web01:
-    depends_on:
-      - app01
     build: web/.
     ports:
       - "80:80"
