@@ -17,13 +17,14 @@ RUN mvn install
 FROM tomcat:9-jre11
 
 # Create a non-root user and group for security
-RUN groupadd -r tom_grp && useradd -g tom_usr tom_grp
+# RUN 
+# RUN groupadd -r tom_grp && useradd -g tom_usr tom_grp
 
-# Set ownership of Tomcat directories to the non-root user
-RUN chown -R tom_usr:tom_grp /usr/local/tomcat
+# # Set ownership of Tomcat directories to the non-root user
+# RUN chown -R tom_usr:tom_grp /usr/local/tomcat
 
-# Switch to the non-root user for further actions
-USER tom_usr
+# # Switch to the non-root user for further actions
+# USER tom_usr
 
 # Remove any existing webapps to avoid conflicts
 RUN rm -rf /usr/local/tomcat/webapps/*
