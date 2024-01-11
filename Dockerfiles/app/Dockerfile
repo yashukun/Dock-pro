@@ -8,10 +8,10 @@ WORKDIR /app
 RUN apt update && apt install git -y 
 
 # Clone the application repository
-RUN git clone https://github.com/yashukun/Dock-pro.git && cd Dock-pro
+RUN git clone https://github.com/yashukun/Dock-pro.git
 
 # Build the application using Maven
-RUN mvn install 
+RUN cd Dock-pro && mvn install 
 
 # Stage 2: Create the runtime image with Tomcat
 FROM tomcat:9-jre11
