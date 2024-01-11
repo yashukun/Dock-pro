@@ -1,12 +1,14 @@
 version: "3.9"
 services:
   db01: 
+    container_name: db01
     build: db/.
     ports:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
   app01: 
+    container_name: app01
     depends_on:
       - db01 
       - mc01 
@@ -15,15 +17,17 @@ services:
     ports:
       - "8080:8080"
   web01:
+    container_name: web01
     build: web/.
     ports:
       - "80:80"
   mc01:
-    
+    container_name: mc01
     image: memcached:latest
     ports:
       - "11211:11211"
   rmq01:
+    container_name: rmq01
     image: rabbitmq:latest
     ports:
      - "5672:5672"
