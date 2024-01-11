@@ -17,6 +17,9 @@ services:
     ports:
       - "8080:8080"
   web01:
+    depends_on:
+      - app01
+    restart: always
     container_name: web01
     build: web/.
     ports:
